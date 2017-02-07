@@ -1,0 +1,11 @@
+html,
+body {
+    width: 100%;
+    max-width: 640px;
+}
+h1 {
+    font-size: rem(32);
+}
+@import './header.scss';
+@import './footer.scss';
+@import './navbar.scss';

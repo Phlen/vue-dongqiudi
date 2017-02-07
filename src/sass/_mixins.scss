@@ -1,0 +1,17 @@
+// mixins 定义
+@mixin clearfix {
+    zoom:1;
+
+    &:after{
+        display:block;
+        clear:both;
+        content:"";
+        visibility:hidden;
+        height:0;
+    }
+}
+
+$htmlFontSize: 40;
+@function rem($px) {
+  @return $px/$htmlFontSize + rem;
+}
