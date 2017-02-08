@@ -4,14 +4,16 @@
 
 <template>
   <div class="navbar">
-    <h1>this is navbar</h1>
+    <h1>this is navbar {{myProps}}</h1>
   </div>
 </template>
 
 <script>
   export default {
     name: 'NavBar',
+    props: ['myProps'],
     data () {
+      console.log(this)
       return {}
     }
   }

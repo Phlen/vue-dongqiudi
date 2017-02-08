@@ -3,13 +3,13 @@
 </style>
 
 <template>
-  <div class="view-container">
-    <Header></Header>
-    <Navbar></Navbar>
+  <div class="view-container" v-bind:class="{'sidebar-in': showNav}">
+    <my-header @toggleNav="test"></my-header>
+    <my-navbar v-bind:my-props="showNav"></my-navbar>
     <div class="container">
       <router-view></router-view>
     </div>
-    <Footer></Footer>
+    <my-footer></my-footer>
   </div>
 </template>
 
@@ -20,25 +20,31 @@
   console.log('2333')
   export default {
     data () {
-      return {}
+      return {
+        showNav: false
+      }
     },
     beforeCreate () {
       console.log('before')
     },
     created () {
+      console.log(this)
       console.log('created')
     },
     beforeDestory () {
 
     },
     components: {
-      Header: Header,
-      Footer: Footer,
-      Navbar: NavBar
+      'my-header': Header,
+      'my-footer': Footer,
+      'my-navbar': NavBar
     },
 
     methods: {
-
+      test () {
+        console.log('test')
+        this.showNav = !this.showNav
+      }
     }
   }
 </script>

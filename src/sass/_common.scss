@@ -12,6 +12,17 @@ h1 {
 }
 
 // layout
+//
+.view-container.sidebar-in {
+  .header {
+    transform: translateX(rem(400));
+    transition: $transition;
+  }
+  .navbar {
+    transform: translateX(0);
+    transition: $transition;
+  }
+}
 .view-container {
   width: 100%;
   min-height: 100vh;
@@ -21,11 +32,25 @@ h1 {
 
   .header,
   .footer {
+    position: relative;
     width: 100%;
     flex: 0 0 rem(100);
     line-height: rem(100);
     background: #333;
     color: #fff;
+  }
+  .header {
+    transform: translateX(0);
+    transition: $transition;
+  }
+  .header .menu {
+    position: absolute;
+    left: rem(20);
+    top: rem(20);
+    width: rem(100);
+    height: rem(60);
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAdCAYAAADGgB7AAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsSAAALEgHS3X78AAAAMElEQVRYw+3VQQEAIAzEMIZ/z4cMYEsU9NdKkvWgfTvguzAApikT7xIGwDQm3ibsAMwPDARxOsH2AAAAAElFTkSuQmCC') no-repeat center;
+    background-size: rem(38) auto;
   }
 
   .footer {
@@ -38,7 +63,9 @@ h1 {
   .navbar {
     position: fixed;
     display: flex;
-    left: rem(-400);
+    transform: translateX(rem(-400));
+    transition: 500ms;
+    transition: transform(0);
     top: 0;
     width: rem(400);
     height: 100%;
@@ -47,6 +74,12 @@ h1 {
     justify-content: center;
     align-items: center;
     color: #fff;
+  }
+
+  .navbar.show-nav {
+    left: 0;
+    transform: translateX(0);
+    transition: 500ms;
   }
 
   .container {
