@@ -3,14 +3,14 @@
 </style>
 
 <template>
-  <div class="header">
-    <h1>this is header</h1>
+  <div class="navbar">
+    <h1>this is navbar</h1>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'Header',
+    name: 'NavBar',
     data () {
       return {}
     }

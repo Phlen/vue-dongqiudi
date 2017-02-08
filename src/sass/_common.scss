@@ -2,10 +2,58 @@ html,
 body {
     width: 100%;
     max-width: 640px;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
 }
 h1 {
     font-size: rem(32);
 }
-@import './header.scss';
-@import './footer.scss';
-@import './navbar.scss';
+
+// layout
+.view-container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .header,
+  .footer {
+    width: 100%;
+    flex: 0 0 rem(100);
+    line-height: rem(100);
+    background: #333;
+    color: #fff;
+  }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+  }
+
+  .navbar {
+    position: fixed;
+    display: flex;
+    left: rem(-400);
+    top: 0;
+    width: rem(400);
+    height: 100%;
+    background: #333;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  }
+
+  .container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: rem(100);
+  }
+}
