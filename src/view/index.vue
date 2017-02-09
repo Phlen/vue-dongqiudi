@@ -5,33 +5,33 @@
 </style>
 
 <template>
-    <div class="view-index">
-        <h1>Index</h1>
-    </div>
+  <div class="view-index">
+    <h1>Index</h1>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: 'index',
-        data () {
-            return {}
-        },
-        beforeCreate () {
-            console.log('index beforeCreate')
-        },
-        created () {
-            console.log(this)
-            console.log('created')
-            this.init()
-        },
-        beforeDestory () {
+  export default {
+    name: 'index',
+    data () {
+      return {}
+    },
+    beforeCreate () {
+      console.log('index beforeCreate')
+    },
+    created () {
+      console.log(this)
+      console.log('created')
+      this.init()
+    },
+    beforeDestory () {
 
-        },
+    },
 
-        methods : {
-            init () {
-                console.log('init')
-            }
-        }
+    methods : {
+      init () {
+        console.log('init')
+      }
     }
+  }
 </script>

@@ -9,14 +9,14 @@ import About from 'view/About.vue'
 Vue.use(VueRouter)
 
 const routes = [
-    {path: '/', component: Index},
-    {path: '/about', component: About}
+  {path: '/', component: Index},
+  {path: '/about', component: About}
 ]
 const router = new VueRouter({
-    routes
+  routes
 })
 
 new Vue({
-    router,
-    ...App
+  router,
+  ...App
 }).$mount('#app')

@@ -49,7 +49,7 @@ module.exports = {
                 ])
             },
             {
-                test: /\.css$/, 
+                test: /\.css$/,
                 loader: ExtractTextPlugin.extract([
                     'css'
                 ])
@@ -92,7 +92,8 @@ module.exports = {
             'images': path.join(__dirname, './images'),
             'view': path.join(__dirname, './src/view'),
             'styles': path.join(__dirname, './src/sass'),
-            'components': path.join(__dirname, './src/components')
+            'components': path.join(__dirname, './src/components'),
+            'commons': path.join(__dirname, './src/common')
         }
     },
 

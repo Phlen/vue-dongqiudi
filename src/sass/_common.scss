@@ -1,3 +1,4 @@
+
 html,
 body {
     width: 100%;
@@ -62,7 +63,6 @@ h1 {
 
   .navbar {
     position: fixed;
-    display: flex;
     transform: translateX(rem(-400));
     transition: 500ms;
     transition: transform(0);
@@ -74,6 +74,67 @@ h1 {
     justify-content: center;
     align-items: center;
     color: #fff;
+
+    .nav {
+      display: block;
+      width: 100%;
+      color: #fff;
+      font-size: rem(28);
+      text-align: left;
+
+      >li {
+        position: relative;
+        padding:0 rem(30);
+        &::before {
+          content: "";
+          width: rem(340);
+          position: absolute;
+          left: rem(30);
+          bottom: 0;
+          border-bottom: 1px solid rgba(#fff, 0.1);
+        }
+        a {
+          display: block;
+          position: relative;
+          line-height: rem(100);
+        }
+        &.cur {
+          background: #171717;
+          color: #c72b2f;
+          &::before {
+            top: -1px;
+            bottom: auto;
+            background: #171717;
+          }
+          .sub-nav {
+            display: block;
+            color: #fff;
+            padding-left: rem(20);
+          }
+        }
+        .sub-nav {
+          display: none;
+        }
+      }
+      .plus,
+      .minus {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: rem(40);
+        height: rem(100);
+        background: no-repeat center;
+        background-size: rem(20) auto;
+      }
+      .minus {
+          background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAYAAABYBvyLAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsSAAALEgHS3X78AAAAGElEQVQI12P8////GQYqAiZqGsbAwMAAAF4MA80t+8lNAAAAAElFTkSuQmCC");
+      }
+
+      .plus {
+          background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsSAAALEgHS3X78AAAAN0lEQVQ4y2NgIAL8////zP///88Qo5aJGEWkgFEDRw0kAzASmWA1ofR1uruQKDCa9UYNHGoGAgD8mxQRrdSTiQAAAABJRU5ErkJggg==");
+      }
+    }
   }
 
   .navbar.show-nav {

@@ -19,7 +19,6 @@
     },
     methods: {
       toggleNav (e) {
-        console.log('toggleNav')
         this.$emit('toggleNav')
       }
     }

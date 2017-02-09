@@ -1,11 +1,10 @@
 <style lang="sass">
-
 </style>
 
 <template>
   <div class="view-container" v-bind:class="{'sidebar-in': showNav}">
     <my-header @toggleNav="test"></my-header>
-    <my-navbar v-bind:my-props="showNav"></my-navbar>
+    <my-navbar v-bind:my-props="showNav" @toggleNav="test"></my-navbar>
     <div class="container">
       <router-view></router-view>
     </div>
@@ -17,7 +16,6 @@
   import Header from 'components/header.vue'
   import Footer from 'components/footer.vue'
   import NavBar from 'components/navbar.vue'
-  console.log('2333')
   export default {
     data () {
       return {
@@ -28,7 +26,6 @@
       console.log('before')
     },
     created () {
-      console.log(this)
       console.log('created')
     },
     beforeDestory () {
@@ -42,7 +39,6 @@
 
     methods: {
       test () {
-        console.log('test')
         this.showNav = !this.showNav
       }
     }
